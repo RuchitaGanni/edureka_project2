@@ -1,0 +1,109 @@
+{
+  "subcat": [
+    {
+      "main_category_id": "1",
+      "subc_name": "Fresh Fruit",
+      "id": 1
+    },
+    {
+      "main_category_id": "1",
+      "subc_name": "Organic Fruit",
+      "id": 2
+    },
+    {
+      "main_category_id": "2",
+      "subc_name": "Fresh Vegetables",
+      "id": 3
+    },
+    {
+      "main_category_id": "2",
+      "subc_name": "Sprouts",
+      "id": 4
+    },
+    {
+      "main_category_id": "2",
+      "subc_name": "Herbs",
+      "id": 5
+    },
+    {
+      "main_category_id": "2",
+      "subc_name": "Root Vegetables",
+      "id": 6
+    },
+    {
+      "main_category_id": "2",
+      "subc_name": "Leafy Vegetables",
+      "id": 7
+    },
+    {
+      "main_category_id": "3",
+      "subc_name": "Sunflower oils",
+      "id": 8
+    },
+    {
+      "main_category_id": "3",
+      "subc_name": "Rice Bran oils",
+      "id": 9
+    },
+    {
+      "main_category_id": "3",
+      "subc_name": "Cold Pressed oils",
+      "id": 10
+    },
+    {
+      "main_category_id": "4",
+      "subc_name": "Breads",
+      "id": 11
+    },
+    {
+      "main_category_id": "4",
+      "subc_name": "Cookies",
+      "id": 12
+    },
+    {
+      "main_category_id": "4",
+      "subc_name": "Cakes",
+      "id": 13
+    },
+    {
+      "main_category_id": "5",
+      "subc_name": "Dals ",
+      "id": 14
+    },
+    {
+      "main_category_id": "5",
+      "subc_name": "Organic Staples",
+      "id": 15
+    },
+    {
+      "main_category_id": "6",
+      "subc_name": "Fish",
+      "id": 16
+    },
+    {
+      "main_category_id": "6",
+      "subc_name": "Chicken",
+      "id": 17
+    },
+    {
+      "main_category_id": "6",
+      "subc_name": "Goat",
+      "id": 18
+    },
+    {
+      "main_category_id": "6",
+      "subc_name": "Eggs",
+      "id": 19
+    },
+    {
+      "main_category_id": "7",
+      "subc_name": "Namkeen",
+      "id": 20
+    },
+    {
+      "main_category_id": "7",
+      "subc_name": "Noodles",
+      "id": 21
+    }
+  ]
+}
