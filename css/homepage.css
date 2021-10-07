@@ -1,0 +1,25 @@
+.navbar-default{
+    background-color: lightgreen;
+}
+
+.navbar-brand{
+    background-color: green;
+    
+}
+
+.nav_text{
+    font-size:22px;
+    font-weight: bold;
+    color: white;
+}
+
+#search{
+    margin-left: 30px;
+    width: 600px;
+}
+.navbar-btn{
+    float:right;
+}
+#main{
+    background-color:yellow;
+}
