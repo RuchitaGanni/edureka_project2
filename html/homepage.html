@@ -18,24 +18,110 @@
                 <a class="navbar-brand" href="#">
                     <span class="nav_text">G</span>
                 </a>
-
+                <!-- <button type="button" class="btn btn-default navbar-right">Sign in</button> -->
             </div>
-            <form class="navbar-form navbar-left" role="search">
+            <ul class="nav navbar-nav ">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Categories</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <span
+                            class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Fruits</a></li>
+                        <li><a href="#">Vegetables</a></li>
+                        <li><a href="#">Bakery</a></li>
+
+                    </ul>
+                </li>
+                <!-- <li>
+                    <select class="dropdown-toggle" data-toggle="dropdown">
+                        <option value="0">Select car:</option>
+                        <option value="1">Audi</option>
+                        <option value="2">BMW</option>
+                    </select>
+                </li> -->
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li><button type="button" class="btn btn-default navbar-btn">Sign in</button></li>
+
+
+
+            </ul>
+            <!-- <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
                     <input type="text" class="form-control" id="search" placeholder="Search">
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-            <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+            </form> -->
+
         </div>
 
 
         </div>
     </nav>
-    <!-- Navbar -->
-    <div class="container" id="main">
-        <h2>main content</h2>
+    <!-- Navbar ends -->
+    <!-- <div class="container" id="main"> -->
+    <!-- seearch bar -->
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
+            <div class="form-group">
+                <!-- apply  events to suggest option on typing -->
+                <input type="text" class="form-control" id="search" placeholder="Search">
+            </div>
+        </div>
     </div>
+    <!-- search bar ends -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="../data/images/detergent.jpg" alt="Detergent" class="carousel-images">
+            </div>
+
+            <div class="item">
+                <img src="../data/images/fruits.jpg" alt="Fruits" class="carousel-images">
+            </div>
+
+
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+    <div class="row" id="items_div">
+        <div class="col-sm-6 col-md-4">
+            
+            <div class="thumbnail">
+                <div id="offer_divs">
+                    Get 10% off
+                    <span  class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>
+                </div>
+                <img src="../data/images/apples.jpg" alt="Appples">
+                <div class="caption">
+                    <p>Apples</p>
+                    <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
 
 </body>
 
