@@ -33,18 +33,13 @@
 
                     </ul>
                 </li>
-                <!-- <li>
-                    <select class="dropdown-toggle" data-toggle="dropdown">
-                        <option value="0">Select car:</option>
-                        <option value="1">Audi</option>
-                        <option value="2">BMW</option>
-                    </select>
-                </li> -->
+               
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-
-                <li><button type="button" class="btn btn-default navbar-btn">Sign in</button></li>
+               
+                <li><a class="right_li"><span class="glyphicon glyphicon-user "></span>Sign In/ Sign Up</a></li>
+                <li><a class="right_li"><span class="glyphicon glyphicon-shopping-cart "></span><span class="badge">3</span>Cart</a></li>
 
 
 
@@ -103,26 +98,165 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-4" style="margin-bottom: 10px;margin-top: 10px;">
+                <span class="div_heading">Top Deals</span>
+            </div>
+        </div>
 
+        <div class="row" id="items_div">
+            <div class=" col-sm-3 col-md-3">
 
-    <div class="row" id="items_div">
-        <div class="col-sm-6 col-md-4">
-            
-            <div class="thumbnail">
-                <div id="offer_divs">
-                    Get 10% off
-                    <span  class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>
+                <div class="thumbnail">
+                    <div id="offer_divs">
+                        Get 10% off
+                        <span class="glyphicon glyphicon-asterisk" id="offer_txt"></span>
+                    </div>
+                    <img src="../data/images/apples.jpg" alt="Apples" id="th_img">
+                    <div class="caption_div">
+                        <span class="head_txt">Apples 1 kg</span>
+                    </div>
+                    <div class="mrp_div">
+                        <span class="mrp_txt">&#8377; 150.00</span>
+                    </div>
+                    <div class="cart_div">
+                        <button class="btn btn-primary" id="cart_btn">
+                            <span>Add</span>
+                            <span class="glyphicon glyphicon-plus-sign"></span>
+                        </button>
+
+                    </div>
                 </div>
-                <img src="../data/images/apples.jpg" alt="Appples">
-                <div class="caption">
-                    <p>Apples</p>
-                    <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
+            </div>
+            <div class="col-sm-3 col-md-3">
+
+                <div class="thumbnail">
+                    <div id="offer_divs">
+                        Get 12% off
+                        <span class="glyphicon glyphicon-asterisk" id="offer_txt"></span>
+                    </div>
+                    <img src="../data/images/strawberry.jpg" alt="Strawberry" id="th_img">
+                    <div class="caption_div">
+                        <span class="head_txt">Strawberry 1 kg</span>
+                    </div>
+                    <div class="mrp_div">
+                        <span class="mrp_txt">&#8377; 250.00</span>
+                    </div>
+                    <div class="cart_div">
+                        <button class="btn btn-primary" id="cart_btn">
+                            <span>Add</span>
+                            <span class="glyphicon glyphicon-plus-sign"></span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3">
+
+                <div class="thumbnail">
+                    <div id="offer_divs">
+                        Get 8% off
+                        <span class="glyphicon glyphicon-asterisk" id="offer_txt"></span>
+                    </div>
+                    <img src="../data/images/sugar.png" alt="Sugar" id="th_img">
+                    <div class="caption_div">
+                        <span class="head_txt">Sugar 1 kg</span>
+                    </div>
+                    <div class="mrp_div">
+                        <span class="mrp_txt">&#8377; 90.00</span>
+                    </div>
+                    <div class="cart_div">
+                        <button class="btn btn-primary" id="cart_btn">
+                            <span>Add</span>
+                            <span class="glyphicon glyphicon-plus-sign"></span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3">
+
+                <div class="thumbnail">
+                    <div id="offer_divs">
+                        Get 8% off
+                        <span class="glyphicon glyphicon-asterisk" id="offer_txt"></span>
+                    </div>
+                    <img src="../data/images/pearssoap.png" alt="Sugar" id="th_img">
+                    <div class="caption_div">
+                        <span class="head_txt">Pears Pure & Gentle Saop</span>
+                    </div>
+                    <div class="mrp_div">
+                        <span class="mrp_txt">&#8377; 65.00</span>
+                    </div>
+                    <div class="cart_div">
+                        <button class="btn btn-primary" id="cart_btn">
+                            <span>Add</span>
+                            <span class="glyphicon glyphicon-plus-sign"></span>
+                        </button>
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- </div> -->
+<!-- shop by category -->
+        <div class="row">
+            <div class="col-sm-6 col-md-4" style="margin-bottom: 10px;margin-top: 10px;">
+                <span class="div_heading">Shop by category</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 col-md-2 cat">
+                <div class="thumbnail">
+                    <img src="../data/images/rice.jpg" alt="Rice" id="shc_img">
+                    <div class="caption_div">
+                        <span class="shchead_txt">Rice</span>
+                    </div>
+                </div>
 
+            </div>
+            <div class="col-sm-2 col-md-2 cat">
+                <div class="thumbnail">
+                    <img src="../data/images/cleaning.jpg" alt="Cleaning & Household" id="shc_img">
+                    <div class="caption_div">
+                        <span class="shchead_txt">Cleaning & Household</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-2 col-md-2 cat">
+                <div class="thumbnail">
+                    <img src="../data/images/Beverages.jpg" alt="Beverages" id="shc_img">
+                    <div class="caption_div">
+                        <span class="shchead_txt">Beverages</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-sm-2 col-md-2 cat">
+                <div class="thumbnail">
+                    <img src="../data/images/snacks.jpg" alt="Snacks" id="shc_img">
+                    <div class="caption_div">
+                        <span class="shchead_txt">Snacks</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-2 col-md-2 cat">
+                <div class="thumbnail">
+                    <img src="../data/images/oils.jpg" alt="Oils" id="shc_img">
+                    <div class="caption_div">
+                        <span class="shchead_txt">Oils</span>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+       
+
+    </div>
 </body>
 
 </html>
