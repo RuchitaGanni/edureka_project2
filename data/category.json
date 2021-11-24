@@ -1,44 +1,42 @@
-{
-  "category": [
-    {
-      "category_name": "Fruits",
-      "id": 1
-    },
-    {
-      "category_name": "Vegetables",
-      "id": 2
-    },
-    {
-      "category_name": "Oils",
-      "id": 3
-    },
-    {
-      "category_name": "Bakery",
-      "id": 4
-    },
-    {
-      "category_name": "Pulses",
-      "id": 5
-    },
-    {
-      "category_name": "Meat",
-      "id": 6
-    },
-    {
-      "category_name": "Snacks",
-      "id": 7
-    },
-    {
-      "category_name": "Beverages",
-      "id": 8
-    },
-    {
-      "category_name": "Cleaning & Household",
-      "id": 9
-    },
-    {
-      "category_name": "Rice",
-      "id": 10
-    }
-  ]
-}
+[
+  {
+    "category_name": "Fruits",
+    "id": 1
+  },
+  {
+    "category_name": "Vegetables",
+    "id": 2
+  },
+  {
+    "category_name": "Oils",
+    "id": 3
+  },
+  {
+    "category_name": "Bakery",
+    "id": 4
+  },
+  {
+    "category_name": "Pulses",
+    "id": 5
+  },
+  {
+    "category_name": "Meat",
+    "id": 6
+  },
+  {
+    "category_name": "Snacks",
+    "id": 7
+  },
+  {
+    "category_name": "Beverages",
+    "id": 8
+  },
+  {
+    "category_name": "Cleaning & Household",
+    "id": 9
+  },
+  {
+    "category_name": "Rice",
+    "id": 10
+  }
+]

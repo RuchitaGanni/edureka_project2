@@ -1,0 +1,38 @@
+[
+  {
+    "location_id": 1,
+    "location_name": "Chandni Chowk",
+    "state_name": "Delhi",
+    "pin_code": 110006
+  },
+  {
+    "location_id": 2,
+    "location_name": "Baroda House",
+    "state_name": "Delhi",
+    "pin_code": 110001
+  },
+  {
+    "location_id": 3,
+    "location_name": "Kothapalle ",
+    "state_name": "Visakhapatanam",
+    "pin_code": 531114
+  },
+  {
+    "location_id": 4,
+    "location_name": "Rushikonda",
+    "state_name": "Visakhapatanam",
+    "pin_code": 531022
+  },
+  {
+    "location_id": 5,
+    "location_name": "Maloya Colony",
+    "state_name": "Chandigarh",
+    "pin_code": 160025
+  },
+  {
+    "location_id": 6,
+    "location_name": "NDC Chandigarh",
+    "state_name": "Chandigarh",
+    "pin_code": 160006
+  }
+]
