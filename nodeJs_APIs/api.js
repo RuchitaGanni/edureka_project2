@@ -90,7 +90,16 @@ app.delete('/deleteOrder/:user',(req, res) => {
     })
 })
 
+ //mealtypes using projections
+ app.get('/getMealtypes',(req,res)=>{
+    // var projection={"content": 0,_id:0};{projection:{mealtype:1,content:1,_id:0}}
+    db.collection('mealtypes').find({},{projection:{mealtype:1,content:1,_id:0}}).toArray((err,result) => {
+        if(err) throw err;
+        // console.log(result);
+        res.send(result)
+    })
 
+})
 
 
 

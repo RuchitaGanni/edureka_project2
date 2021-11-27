@@ -20,3 +20,25 @@ https://www.indiapost.gov.in/VAS/Pages/findpincode.aspx
 >> api doc link 
 
 https://docs.google.com/spreadsheets/d/1vWm7etNqpmnrmCiTV1gewK4SQLRfi7c_1oR5u1xrlco/edit#gid=0
+
+>> create reactapp
+npx create-react-app my-app
+
+or
+
+npm init react-app my-app
+
+
+
+
+
+ //mealtypes using projections
+ app.get('/getMealtypes',(req,res)=>{
+    // var projection={"content": 0,_id:0};{projection:{mealtype:1,content:1,_id:0}}
+    db.collection('mealtypes').find({},{projection:{mealtype:1,content:1,_id:0}}).toArray((err,result) => {
+        if(err) throw err;
+        // console.log(result);
+        res.send(result)
+    })
+
+})
