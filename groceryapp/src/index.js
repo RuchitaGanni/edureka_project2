@@ -1,14 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Home from './components/Home'
 
-const App = () => {
-  return (
-    <div>
-      <h2>Hey Ruchita</h2>
-      <h1>Here in React APP</h1>
 
-    </div>
-  )
-}
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<Home/>, document.getElementById('root'))
