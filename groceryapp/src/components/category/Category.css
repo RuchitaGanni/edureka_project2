@@ -1,0 +1,20 @@
+.cat{
+    /* background-color:pink; */
+    border: 1px solid rgb(148, 144, 144);
+    margin-left: 10px;
+    /* transition: 1s; */
+    
+}
+#shc_img{
+    height: 200px;
+    width: 100%;
+}
+.shchead_txt{
+    /* font-weight: bold; */
+    font-size:15px;
+    font-family: sans-serif;
+}
+/* .cat:hover{
+    transform:scale(1.1);
+    z-index: 1;
+} */

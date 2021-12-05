@@ -1,5 +1,37 @@
 #main-body-container{
-    height:100px;
+    height:auto;
+    /* width: 100%; */
+    /* background-color: rgb(137, 197, 137); */
+}
+
+/* .searchBar{
     width: 100%;
-    background-color: rgb(137, 197, 137);
+    height: 30px;
+    margin-top: 5px;
+    background-color: white;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+} */
+#serachBox{
+    position: relative;
+    align-items: center;
+}
+.seacrhInput{
+    border:2px green solid !important;
+    border-radius: 5px;
+    width: 60%;
+    height: 30px;
+    margin-left: 200px;
+}
+.seacrhInput:focus{
+   outline: none;
+}
+
+
+@media screen and (max-width: 600px) {
+    .seacrhInput{
+       
+        margin-left: 80px;
+    }
 }

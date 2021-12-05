@@ -1,0 +1,30 @@
+#offer_divs{
+    color:rgb(185, 49, 49);
+    text-align: center;
+    margin-bottom: 5px;
+    /* box-shadow: 8px 3px 8px 1px rgb(58, 52, 52); */
+}
+#offer{
+    background-color:yellow
+}
+#offer_txt{
+    color: red;
+}
+#th_img{
+    height:200px;
+    width:100%;
+}
+.head_txt{
+    font-weight: bold;
+    font-size:15px;
+    font-family: Verdana;
+}
+.caption_div,.mrp_div,.cart_div{
+    height: 30px;
+    /* display: flex;
+    justify-content: center; */
+}
+#cart_btn{
+    width: 100px;
+
+}
