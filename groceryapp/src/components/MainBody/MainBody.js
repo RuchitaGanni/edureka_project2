@@ -1,7 +1,18 @@
 import React, { Component, Fragment } from 'react';
 import './MainBody.css';
 import Category from '../category/Category';
+import ProductList from '../ProductList/ProductList'
+import JSON from '../category.json'
 class MainBody extends Component {
+
+    constructor(){
+        super()
+
+        this.state={
+            ct:JSON
+        }
+    }
+
     render() {
         return (
             <Fragment >
@@ -12,7 +23,8 @@ class MainBody extends Component {
                     {/* </div>
                     </div> */}
                     <hr/>
-                    <Category />
+                    <Category cats={this.state.ct}/>
+                    {/* <ProductList/> */}
                 </div>
             </Fragment>
         )

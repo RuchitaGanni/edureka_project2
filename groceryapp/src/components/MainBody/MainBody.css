@@ -28,10 +28,24 @@
    outline: none;
 }
 
+@media screen and (max-width: 800px) {
+    .seacrhInput{
+       
+        margin-left: 60px;
+    }
+    #main-body-container{
+        margin-left:10px
+       /* text-align: center; */
+    }
+}
 
 @media screen and (max-width: 600px) {
     .seacrhInput{
        
         margin-left: 80px;
+    }
+    #main-body-container{
+        margin-left:10px
+       /* text-align: center; */
     }
 }

@@ -6,98 +6,128 @@ class ProductList extends Component {
     render() {
         return (
             <Fragment>
-                {/* <input type="text" placeholder="Search essentials,groceries and more..," className="seacrhInput" /> */}
-                <div className="row" id="items_div">
-                    <div className=" col-sm-3 col-md-3">
+                <div className="container" id="main-body-container">
+                    {/* <div className="row">
+                        <div className="col-sm-1 col-md-2 cat">
+                            <Link to="" >
+                            <div className="thumbnail">
+                                <img src="/images/rice/Lalitha.jpg" alt="Lalitha" id="shc_img" />
+                                <div className="caption_div">
+                                    <span className="shchead_txt">Lalitha Rice 1KG </span>
+                                </div>
+                                <div class="mrp_div">
+                                    <span class="mrp_txt">&#8377; 150.00</span>
+                                </div>
+                                <div class="cart_div">
+                                    <button class="btn btn-primary" id="cart_btn">
+                                        <span>Add</span>
+                                        <span class="glyphicon glyphicon-plus-sign"></span>
+                                    </button>
 
-                        <div className="thumbnail">
-                            <div id="offer_divs">
-                                Get 10% off
-                                <span className="glyphicon glyphicon-asterisk" id="offer_txt"></span>
+                                </div>
                             </div>
-                            <img src="/images/apples.jpg" alt="Apples" id="th_img" />
-                            <div className="caption_div">
-                                <span className="head_txt">Apples 1 kg</span>
-                            </div>
-                            <div className="mrp_div">
-                                <span className="mrp_txt">&#8377; 150.00</span>
-                            </div>
-                            <div className="cart_div">
-                                <button className="btn btn-primary" id="cart_btn">
-                                    <span>Add</span>
-                                    <span className="glyphicon glyphicon-plus-sign"></span>
-                                </button>
-
-                            </div>
+                            </Link>
                         </div>
-                    </div>
-                    <div className="col-sm-3 col-md-3">
 
-                        <div className="thumbnail">
-                            <div id="offer_divs">
-                                Get 12% off
-                                <span className="glyphicon glyphicon-asterisk" id="offer_txt"></span>
-                            </div>
-                            <img src="/images/strawberry.jpg" alt="Strawberry" id="th_img" />
-                            <div className="caption_div">
-                                <span className="head_txt">Strawberry 1 kg</span>
-                            </div>
-                            <div className="mrp_div">
-                                <span className="mrp_txt">&#8377; 250.00</span>
-                            </div>
-                            <div className="cart_div">
-                                <button className="btn btn-primary" id="cart_btn">
-                                    <span>Add</span>
-                                    <span className="glyphicon glyphicon-plus-sign"></span>
-                                </button>
+                        <div className="col-sm-2 col-md-2 cat">
+                            <div className="thumbnail">
+                                <img src="/images/rice/Dawat.jpg" alt="Dawat" id="shc_img" />
+                                <div className="caption_div">
+                                    <span className="shchead_txt">Dawat Rice</span>
+                                </div>
+                                <div class="mrp_div">
+                                    <span class="mrp_txt">&#8377; 100.00</span>
+                                </div>
+                                <div class="cart_div">
+                                    <button class="btn btn-primary" id="cart_btn">
+                                        <span>Add</span>
+                                        <span class="glyphicon glyphicon-plus-sign"></span>
+                                    </button>
 
+                                </div>
                             </div>
+
                         </div>
-                    </div>
-                    <div className="col-sm-3 col-md-3">
+                        <div className="col-sm-2 col-md-2 cat">
+                            <div className="thumbnail">
+                                <img src="/images/rice/Brown.jpg" alt="Brown Rice" id="shc_img" />
+                                <div className="caption_div">
+                                    <span className="shchead_txt">Brown Rice</span>
+                                </div>
+                                <div class="mrp_div">
+                                    <span class="mrp_txt">&#8377; 150.00</span>
+                                </div>
+                                <div class="cart_div">
+                                    <button class="btn btn-primary" id="cart_btn">
+                                        <span>Add</span>
+                                        <span class="glyphicon glyphicon-plus-sign"></span>
+                                    </button>
 
-                        <div className="thumbnail">
-                            <div id="offer_divs">
-                                Get 8% off
-                                <span className="glyphicon glyphicon-asterisk" id="offer_txt"></span>
+                                </div>
                             </div>
-                            <img src="/images/sugar.png" alt="Sugar" id="th_img" />
-                            <div className="caption_div">
-                                <span className="head_txt">Sugar 1 kg</span>
-                            </div>
-                            <div className="mrp_div">
-                                <span className="mrp_txt">&#8377; 90.00</span>
-                            </div>
-                            <div className="cart_div">
-                                <button className="btn btn-primary" id="cart_btn">
-                                    <span>Add</span>
-                                    <span className="glyphicon glyphicon-plus-sign"></span>
-                                </button>
 
-                            </div>
                         </div>
-                    </div>
-                    <div className="col-sm-4 col-md-3">
 
-                        <div className="thumbnail">
-                            <div id="offer_divs">
-                                Get 8% off
-                                <span className="glyphicon glyphicon-asterisk" id="offer_txt"></span>
-                            </div>
-                            <img src="/images/pearssoap.png" alt="Sugar" id="th_img" />
-                            <div className="caption_div">
-                                <span className="head_txt">Pears Pure & Gentle Saop</span>
-                            </div>
-                            <div className="mrp_div">
-                                <span className="mrp_txt">&#8377; 65.00</span>
-                            </div>
-                            <div className="cart_div">
-                                <button className="btn btn-primary" id="cart_btn">
-                                    <span>Add</span>
-                                    <span className="glyphicon glyphicon-plus-sign"></span>
-                                </button>
+                        <div className="col-sm-2 col-md-2 cat">
+                            <div className="thumbnail">
+                                <img src="/images/rice/koohinoor.jpg" alt="kohinoor" id="shc_img" />
+                                <div className="caption_div">
+                                    <span className="shchead_txt">Kohinoor</span>
+                                </div>
+                                <div class="mrp_div">
+                                    <span class="mrp_txt">&#8377; 150.00</span>
+                                </div>
+                                <div class="cart_div">
+                                    <button class="btn btn-primary" id="cart_btn">
+                                        <span>Add</span>
+                                        <span class="glyphicon glyphicon-plus-sign"></span>
+                                    </button>
 
+                                </div>
                             </div>
+
+                        </div>
+                        <div className="col-sm-2 col-md-2 cat">
+                            <div className="thumbnail">
+                                <img src="/images/rice/jasmine.jpg" alt="jasmine" id="shc_img" />
+                                <div className="caption_div">
+                                    <span className="shchead_txt">Jasmine Rice</span>
+                                </div>
+                                <div class="mrp_div">
+                                    <span class="mrp_txt">&#8377; 150.00</span>
+                                </div>
+                                <div class="cart_div">
+                                    <button class="btn btn-primary" id="cart_btn">
+                                        <span>Add</span>
+                                        <span class="glyphicon glyphicon-plus-sign"></span>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div> */}
+
+                    <div className="card" id="product_card">
+                        <img src="/images/rice/jasmine.jpg" alt="jasmine" className="cardImage" id="product_image" />
+
+                        <div className="caption_div">
+                            <center>
+                                <span className="shchead_txt">Jasmine Rice</span>
+                            </center>
+                        </div>
+                        <div class="mrp_div">
+                            <center>
+                                <span class="mrp_txt">&#8377; 150.00</span>
+                            </center>
+                        </div>
+                        <div class="cart_div">
+                            <button class="btn btn-primary" id="cart_btn">
+                                <span>Add</span>
+                                <span class="glyphicon glyphicon-plus-sign"></span>
+                            </button>
+
                         </div>
                     </div>
                 </div>
