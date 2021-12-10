@@ -3,6 +3,23 @@ import { Link } from 'react-router-dom'
 import './ProductList.css';
 // import './MainBody/MainBody.css'
 class ProductList extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            counter: 0
+        }
+    }
+
+    increase = () => {
+        if (this.state.counter >= 0 && this.state.counter < 5) {
+            this.setState({ counter: this.state.counter + 1 })
+        }
+    }
+    decrase = () => {
+        if (this.state.counter > 0) {
+            this.setState({ counter: this.state.counter - 1 })
+        }
+    }
     render() {
         return (
             <Fragment>
@@ -114,20 +131,75 @@ class ProductList extends Component {
 
                         <div className="caption_div">
                             <center>
-                                <span className="shchead_txt">Jasmine Rice</span>
+                                <span className="shchead_txt">Jasmine Rice 1KG</span>
                             </center>
                         </div>
                         <div class="mrp_div">
                             <center>
-                                <span class="mrp_txt">&#8377; 150.00</span>
+                                <span class="mrp_txt_prod">&#8377; 399.00</span>
                             </center>
                         </div>
                         <div class="cart_div">
-                            <button class="btn btn-primary" id="cart_btn">
+                            <center>
+                                {/* <button class="btn btn-primary" id="cart_btn">
                                 <span>Add</span>
                                 <span class="glyphicon glyphicon-plus-sign"></span>
-                            </button>
+                            </button> */}
+                                <button onClick={this.decrase} className="btn btn-success"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                <span className="counter">{this.state.counter}</span>
+                                <button onClick={this.increase} className="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                            </center>
+                        </div>
+                    </div>
+                    <div className="card" id="product_card">
+                        <img src="/images/rice/Dawat.jpg" alt="Dawat" className="cardImage" id="product_image" />
 
+                        <div className="caption_div">
+                            <center>
+                                <span className="shchead_txt">Dawat Basmati Rice  1KG</span>
+                            </center>
+                        </div>
+                        <div class="mrp_div">
+                            <center>
+                                <span class="mrp_txt_prod">&#8377; 210.00</span>
+                            </center>
+                        </div>
+                        <div class="cart_div">
+                            <center>
+                                {/* <button class="btn btn-primary" id="cart_btn">
+                                <span>Add</span>
+                                <span class="glyphicon glyphicon-plus-sign"></span>
+                            </button> */}
+                                <button onClick={this.decrase} className="btn btn-success"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                <span className="counter">{this.state.counter}</span>
+                                <button onClick={this.increase} className="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                            </center>
+                        </div>
+                    </div>
+                    <div className="card" id="product_card">
+                        <img src="/images/rice/Brown.jpg" alt="Brown Rice" className="cardImage" id="product_image" />
+
+                        <div className="caption_div">
+                            <center>
+                                <span className="shchead_txt">Brown Rice  1KG</span>
+                            </center>
+                        </div>
+                        <div class="mrp_div">
+                            <center>
+                                <span class="mrp_txt_prod">&#8377; 110.00</span>
+                            </center>
+                        </div>
+                        <div class="cart_div">
+                            <center>
+                                {/* <button class="btn btn-primary" id="cart_btn">
+                                <span>Add</span>
+                                <span class="glyphicon glyphicon-plus-sign"></span>
+                            </button> */}
+                                <button onClick={this.decrase} className="btn btn-success"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                <span className="counter">{this.state.counter}</span>
+                                <button onClick={this.increase} className="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button>
+
+                            </center>
                         </div>
                     </div>
                 </div>

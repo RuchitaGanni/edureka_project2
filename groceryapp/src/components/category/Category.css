@@ -38,7 +38,18 @@
     border-radius: 10px;
 }
 
-
+/* carousel  */
+#slide{
+    height:400px;
+}
+.carousel-inner>.item>img{
+    height: 350px;
+    width:100%;
+}
+.carousel-inner>.thumbnail{
+    height: 400px;
+    width:100%;
+}
 
 @media screen and (max-width:800px){
     .card{

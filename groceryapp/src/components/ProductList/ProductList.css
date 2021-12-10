@@ -14,10 +14,12 @@
     font-size:15px;
     font-family: Verdana;
 }
-.mrp_txt{
+.mrp_txt_prod{
     font-weight: bold;
     font-size:13px;
+   
     font-family: Verdana;
+    
     color: red
 }
 
