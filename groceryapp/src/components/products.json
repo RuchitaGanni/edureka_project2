@@ -1,0 +1,65 @@
+[
+  {
+    "product_id": 1,
+    "product_name": "Jasmine Rice 1KG",
+    "product_description": "",
+    "product_image":"/images/rice/jasmine.jpg",
+    "price": 399.00,
+    "category_name": "Rice",
+    "category_id": 10
+  },
+  {
+    "product_id": 2,
+    "product_name": "Dawat Basmati Rice  1KG",
+    "product_description": "",
+    "product_image":"/images/rice/Dawat.jpg",
+    "price": 210.00,
+    "category_name": "Rice",
+    "category_id": 10
+  },
+  {
+    "product_id": 3,
+    "product_name": "Brown Rice  1KG",
+    "product_description": "",
+    "product_image":"/images/rice/Brown.jpg",
+    "price": 110.00,
+    "category_name": "Rice",
+    "category_id": 10
+  },
+  {
+    "product_id": 4,
+    "product_name": "CHARMINAR LONG GRAIN BASMATI RICE 5KG",
+    "product_description": "Kohinoor CHARMINAR LONG GRAIN BASMATI RICE",
+    "product_image":"/images/rice/Kohinoor.jpg",
+    "price": 550.00,
+    "category_name": "Rice",
+    "category_id": 10
+  },
+  {
+    "product_id": 5,
+    "product_name": "SRI LALITHA RICE 5KG",
+    "product_description": "SRI LALITHA SONA MASURI RICE 5 KG",
+    "product_image":"/images/rice/Lalitha.jpg",
+    "price": 500.00,
+    "category_name": "Rice",
+    "category_id": 10
+  },
+  {
+    "product_id": 6,
+    "product_name": "Coca-Cola Soft Drink 750 ml",
+    "product_description": "Coca-Cola Soft Drink (Bottle) 750 ml",
+    "product_image":"/images/beverages/coca_cola.jpg",
+    "price": 80.00,
+    "category_name": "Beverages",
+    "category_id": 8
+  },
+  {
+    "product_id": 7,
+    "product_name": "Fanta Orange Flavoured Soft Drink (Bottle) 2 ltr",
+    "product_description": "Fanta Orange Flavoured Soft Drink (Bottle)",
+    "product_image":"/images/beverages/fanta.jpg",
+    "price": 75.00,
+    "category_name": "Beverages",
+    "category_id": 8
+  }
+]

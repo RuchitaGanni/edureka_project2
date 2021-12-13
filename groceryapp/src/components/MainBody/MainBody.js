@@ -1,15 +1,17 @@
 import React, { Component, Fragment } from 'react';
 import './MainBody.css';
 import Category from '../category/Category';
-import ProductList from '../ProductList/ProductList'
-import JSON from '../category.json'
+
+import axios from 'axios';
+
+const categoryUrl="https://edu-groceryapp.herokuapp.com/category";
 class MainBody extends Component {
 
     constructor(){
         super()
 
         this.state={
-            ct:JSON
+            categories:[]
         }
     }
 
@@ -23,11 +25,22 @@ class MainBody extends Component {
                     {/* </div>
                     </div> */}
                     <hr/>
-                    <Category cats={this.state.ct}/>
+                    <Category cats={this.state.categories}/>
                     {/* <ProductList/> */}
                 </div>
             </Fragment>
         )
     }
+     //api call 
+    //  
+    
+    componentDidMount(){
+        axios.get(categoryUrl)
+        .then((res) => {
+            console.log(res.data,'hhhhh');
+            this.setState({categories:res.data})
+        })
+    }
+
 }
 export default MainBody;

@@ -12,6 +12,7 @@ const Routing = () => {
                 <Route exact path="/" component={MainBody}/>
                 <Route exact path="/cart" component={Cart}/>
                 <Route exact path="/product" component={ProductList}/>
+                <Route exact path='saveOrder'/>
                 {/* <Route exact path="/post" component={Post}/>
                 <Route path="/post/:topic" component={PostDetails}/>
                 <Route path="/profile" component={Profile}/> */}

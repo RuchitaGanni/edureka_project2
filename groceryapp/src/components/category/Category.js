@@ -63,10 +63,9 @@ import './Category.css';
 
 
 const Category = (props) => {
-
     const renderProduct = props.cats.map((item) => {
         return (
-            <Link to="/product" >
+            <Link to={`/product?category_id=${item.id}`}  key={item.id} >
                 <div className="card">
                     <img src={item.category_image} alt={item.category_name} className="cardImage" />
 
