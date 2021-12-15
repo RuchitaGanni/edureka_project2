@@ -56,21 +56,21 @@ class Header extends Component {
             </Fragment >
         )
     }
-    async componentDidMount() {
-        try {
-            setInterval(async () => {
-                axios.get("https://edu-groceryapp.herokuapp.com/getOrders")
-                    .then((res) => {
-                        if (res.data.length >= 1) {
-                            this.setState({ cartCount: res.data.length })
+    // async componentDidMount() {
+    //     try {
+    //         setInterval(async () => {
+    //             axios.get("https://edu-groceryapp.herokuapp.com/getOrders")
+    //                 .then((res) => {
+    //                     if (res.data.length >= 1) {
+    //                         this.setState({ cartCount: res.data.length })
 
-                        }
-                    })
-            }, 30);
-        } catch (e) {
-            console.log(e);
-        }
-    }
+    //                     }
+    //                 })
+    //         }, 3000);
+    //     } catch (e) {
+    //         console.log(e);
+    //     }
+    // }
 }
 
 export default Header
