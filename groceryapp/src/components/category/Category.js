@@ -63,17 +63,28 @@ import './Category.css';
 
 
 const Category = (props) => {
-    const renderProduct = props.cats.map((item) => {
-        return (
-            <Link to={`/product?category_id=${item.id}`}  key={item.id} >
-                <div className="card">
-                    <img src={item.category_image} alt={item.category_name} className="cardImage" />
+    let renderProduct;
+    if (props.cats.length > 0) {
+        renderProduct =
+            props.cats.map((item) => {
+                return (
+                    <Link to={`/product?category_id=${item.id}`} key={item.id} >
+                        <div className="card">
+                            <img src={item.category_image} alt={item.category_name} className="cardImage" />
 
-                    <h4><center>{item.category_name}</center></h4>
-                </div>
-            </Link>
-        )
-    })
+                            <h4><center>{item.category_name}</center></h4>
+                        </div>
+                    </Link>
+                )
+            })
+    } else {
+        renderProduct =
+       
+            
+            <img src="/images/loader2.gif" alt="loader" className="LoaderGIF" />
+           
+        //return (<strong>No products Available</strong>)
+    }
     return (
         <Fragment>
             <div id="myCarousel" className="carousel slide" data-ride="carousel">

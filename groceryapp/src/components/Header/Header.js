@@ -1,8 +1,28 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom'
 import './Header.css';
+import axios from 'axios';
 import MainBody from '../MainBody/MainBody'
 class Header extends Component {
+
+    constructor() {
+        super()
+
+        this.state = {
+            cartCount: 0
+        }
+    }
+
+    // cartFunc = () => {
+    //     console.log('caaled')
+    //     axios.get("https://edu-groceryapp.herokuapp.com/getOrders")
+    //         .then((res) => {
+    //             if (res.data.length >= 1) {
+    //                 this.setState({ cartCount: res.data.length })
+
+    //             }
+    //         })
+    // }
     render() {
         return (
             <Fragment>
@@ -22,7 +42,7 @@ class Header extends Component {
                             <ul className="nav navbar-nav">
                                 <li ><Link exact to="/" className="links">Home</Link></li>
 
-                                <li><Link exact to="/cart" className="links"><i class="fa fa-shopping-cart" aria-hidden="true"></i></Link></li>
+                                <li><Link exact to="/cart" className="links"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span className="cartCount">{this.state.cartCount}</span></Link></li>
                                 <li id="userinfo"><Link exact to="/" className="links"><i class="fa fa-user" aria-hidden="true"></i>  Hello..!! Ruchita</Link></li>
                             </ul>
                             {/* <ul className="nav navbar-nav navbar-right">
@@ -35,6 +55,21 @@ class Header extends Component {
                 {/* <MainBody /> */}
             </Fragment >
         )
+    }
+    async componentDidMount() {
+        try {
+            setInterval(async () => {
+                axios.get("https://edu-groceryapp.herokuapp.com/getOrders")
+                    .then((res) => {
+                        if (res.data.length >= 1) {
+                            this.setState({ cartCount: res.data.length })
+
+                        }
+                    })
+            }, 30);
+        } catch (e) {
+            console.log(e);
+        }
     }
 }
 

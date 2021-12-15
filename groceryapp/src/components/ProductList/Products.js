@@ -1,39 +1,105 @@
 import axios from 'axios';
+import { useState, useEffect } from 'react'
 const addToCartUrl = "https://edu-groceryapp.herokuapp.com/saveOrder"
 const Products = (props) => {
-    let counter = 0;
-    const increase = (et) => {
-        //    console.log("propsc In",et);
-
-        // if (counter >= 0 && counter < 5) {
-        //     counter=counter + 1
-        // }
-    }
-    const decrease = (rr) => {
-        // console.log("decrase",rr)
-        // if (props.counter > 0) {
-        //     props.counter=props.counter - 1 
-        // }
-    }
-    // adding items to cart
-    const addToCart = (pid,pname,price,pimage) => {
+    //get cart database
+    const [carts, setCart] = useState([]);
+    // const [disable, setDisable] = useState(false);
+    const [prods, setprod] = useState([]);
+    const [value, setValue] = useState();
+    useEffect(() => {
         
-        const prodObj = {
-            product_id: pid,
-            product_name:pname,
-            product_price:price,
-            image:pimage,
-            quantity: 1,
-            status:0
-        };
-        axios.post(addToCartUrl, prodObj)
-            .then((reponse) => {
-                console.log(reponse);
+        axios.get(`https://edu-groceryapp.herokuapp.com/getOrders`)
+            .then((res) => {
+                if (res.data.length >= 1) {
+                    // console.log(res.data, 'res', 'io')
+                    setCart(carts => (carts = res.data));
+                    setprod(props.list );
+                }
             })
+
+    }, [carts,props]);
+    const mySet1 = [];
+  
+    if (carts.length >= 1) {
+        carts.map((item) => {
+
+            mySet1.push(item.product_id);
+            
+        })
     }
-    const renderMeal = ({ list }) => {
-        if (list.length >= 1) {
-            return list.map((item) => {
+    const addToCart = (pid, pname, q, price, pimage) => {
+        
+        let prodObj='';
+         let updqty;
+        console.log(mySet1,'mySet1',typeof mySet1.indexOf(pid))
+        let chcek=mySet1.indexOf(pid);
+        if (chcek != -1) {
+            carts.map((item)=>{
+                if(item.product_id===pid){
+                    //setDisable(true)
+                    updqty=item.quantity+1;
+                }
+            })
+
+            // prodObj= {
+            //     product_id: pid,
+            //     product_name: pname,
+            //     product_price: price,
+            //     image: pimage,
+            //     quantity: q,
+            //     status: 0
+            // };
+             console.log(prods,'prods')
+           
+            
+                
+            
+            prodObj = {
+                product_id: pid,
+                quantity: updqty,
+                status: 0
+            };
+            console.log(q,'q2')
+            console.log('put', q, pid,'prodObj',prodObj)
+
+            axios.put("https://edu-groceryapp.herokuapp.com/updateStatus", prodObj)
+                .then((reponse) => {
+                    console.log(reponse, 'put');
+                    // window.location.reload(true);
+                })
+           
+        } else {
+           // console.log('post', q, pid)
+            // mySet1.add(item.product_id);
+             prodObj = {
+                product_id: pid,
+                product_name: pname,
+                product_price: price,
+                image: pimage,
+                quantity: q+1,
+                status: 0
+            };
+            console.log('post', q, pid,'prodObj',prodObj)
+            axios.post(addToCartUrl, prodObj)
+                .then((reponse) => {
+                    console.log(reponse, 'post');
+                    // window.location.reload(true);
+                })
+
+                
+        }
+        console.log('regex')
+        // setCart(carts=>carts);
+        setValue({});
+        // window.location.reload(true);
+       
+        
+    }
+   
+    const renderMeal = (value) => {
+        if (prods.length >= 1) {
+            return prods.map((item) => {
                 return (<div className="card" id="product_card" key={item.product_id}>
                     <img src={item.product_image} alt={item.product_name} className="cardImage" id="product_image" />
 
@@ -49,19 +115,25 @@ const Products = (props) => {
                     </div>
                     <div class="cart_div">
                         <center>
-                            <button class="btn btn-primary" id="cart_btn" onClick={(pid,pname,price,pimage) => { addToCart(item.product_id,item.product_name,item.price,item.product_image) }}>
+                            {/* disabled={disable} */}
+                            <button  class="btn btn-primary" id="cart_btn" onClick={(pid, pname, q, price, pimage) => { addToCart(item.product_id, item.product_name, item.qty, item.price, item.product_image) }}>
                                 <span>Add to cart</span>
                                 <span class="glyphicon glyphicon-plus-sign"></span>
                             </button>
-                            {/* <button onClick={decrease(item.product_id)} className="btn btn-success"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                        <span className="counter">{props.counter}</span>
-                        <button onClick={increase} className="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button> */}
+                            {/* <button  className="btn btn-success"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                        <span className="counter">{item.qty}</span>
+                        <button className="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button> */}
                         </center>
                     </div>
                 </div>)
             })
         } else {
-            return (<strong>No products Available</strong>)
+            return (
+
+                <img src="/images/loader2.gif" alt="loader" className="LoaderGIF" />
+                // </div>
+            )
+
         }
     }
     return (

@@ -18,7 +18,7 @@ function CartList() {
 
 
     let counter = 0;
-    const increase = (pid) => {
+    const increase = (pid,qty) => {
     console.log(pid,'pid')
         setCart(carts =>
             carts.map((i) => 
@@ -28,7 +28,16 @@ function CartList() {
             )
             
         );
-        console.log(carts,'i');
+        let prodObj = {
+            product_id: pid,
+            quantity: qty+1,
+            status: 0
+        };
+        axios.put("https://edu-groceryapp.herokuapp.com/updateStatus", prodObj)
+        .then((reponse) => {
+            console.log(reponse, 'put');
+        })
+        console.log(carts,'i',prodObj);
         
        
 
@@ -64,7 +73,7 @@ function CartList() {
                             <div className="parts2">
                                 <button onClick={() => decrease(item.product_id)}><i class="fa fa-minus" aria-hidden="true"></i></button>
                                 <span className="counter">{item.quantity}</span>
-                                <button onClick={() => increase(item.product_id)}><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                <button onClick={(pid,qty) => increase(item.product_id,item.quantity)}><i class="fa fa-plus" aria-hidden="true"></i></button>
 
                             </div>
                         </div>

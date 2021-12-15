@@ -66,6 +66,13 @@
     font-size: 20px;
     color: rgb(244, 248, 245);
 }
+.cartCount{
+    background-color:red;
+    color:white;
+    font-size:16px;
+    border-radius:5px;
+    margin-top:-2px;
+}
 
 @media screen and (max-width:1300px){
     #userinfo{
