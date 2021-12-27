@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom'
 import './Cart.css';
 import CartList from './CartList';
+import CartTable from './CartTable'
+
 import axios from 'axios';
 const cartListUrl = "https://edu-groceryapp.herokuapp.com/getOrders";
 class Cart extends Component {
@@ -20,17 +22,18 @@ class Cart extends Component {
                 <div className="container" id="main-body-container">
                     <center>
                         <button id="checkOut" className="btn btn-primary border border-warning">
-                            <sapn class="btn_txt">Proceed to check Out</sapn>
+                            <span class="btn_txt">Proceed to check Out</span>
                         </button>
                     </center>
 
 
                     {/* <CartList carttems={this.state.cartss} /> */}
-                    <CartList  />
+                    {/* <CartList  /> */}
+                    <CartTable/>
 
                     <center>
                         <button id="checkOut" className="btn btn-primary border border-warning">
-                            <sapn class="btn_txt">Proceed to check Out</sapn>
+                            <span class="btn_txt">Proceed to check Out</span>
                         </button>
                     </center>
                 </div>

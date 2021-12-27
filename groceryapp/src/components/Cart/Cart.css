@@ -14,12 +14,15 @@ ul {
   display: inline-block;
 }
 .cartDivs {
+  /* before table css 
   width: 240px;
   height: 100%;
   float: left;
-  margin-right: 2px;
-  /* background-color: yellow; */
-  /* float: left */
+  margin-right: 2px; */
+
+  width: 100px;
+  height: 100%;
+ 
 }
 .cartItemDesc {
   height: 60%;
@@ -40,11 +43,14 @@ ul {
 }
 
 .cartImage{
-    height: 90%;
+    /* before table css
+     height: 90%;
     width: 90%;
-    /* margin-left:10%; */
     margin-top:2%;
-    border-radius: 10px;
+    border-radius: 10px; */
+
+    height: 100%;
+    width: 100%;
 }
 
 .counter{
@@ -59,5 +65,22 @@ ul {
 .btn_txt{
     color: rgb(255, 255, 255);
     font-weight: bold;
+  font-size: 15px;
+}
+
+thead>tr{
+
+background-color:grey
+}
+th{
+  font-weight: bold;
+  color:rgb(250, 250, 250);
+  font-family: verdana;
+  font-size: 18px;
+}
+td{
+  font-weight: bold;
+  
+  font-family: verdana;
   font-size: 15px;
 }
