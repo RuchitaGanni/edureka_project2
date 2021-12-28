@@ -20,7 +20,7 @@ ul {
   float: left;
   margin-right: 2px; */
 
-  width: 100px;
+  width: 80px;
   height: 100%;
  
 }
@@ -67,7 +67,10 @@ ul {
     font-weight: bold;
   font-size: 15px;
 }
-
+.checkOutDiv{
+ 
+  float:right
+}
 thead>tr{
 
 background-color:grey

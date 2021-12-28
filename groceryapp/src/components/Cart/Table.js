@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-function Table() {
-
+const Table = () => {
+    const history = useHistory();
     const [carts, setCart] = useState([]);
     useEffect(() => {
         axios.get("https://edu-groceryapp.herokuapp.com/getOrders")
@@ -10,66 +11,78 @@ function Table() {
                 if (res.data.length >= 1) {
 
                     setCart(carts => (res.data))
+
                 }
             })
 
     }, []);
-    let counter = 0;
+
 
     const increase = (pid, qty) => {
+        if (qty <= 5) {
+            setCart(carts =>
+                carts.map((i) =>
+                    // if product matches increase else  return the same object
+                    i.product_id === pid ? { ...i, quantity: (i.quantity + 1) } : i
 
-        setCart(carts =>
-            carts.map((i) =>
-                // if product matches increase else  return the same object
-                i.product_id === pid ? { ...i, quantity: (i.quantity + 1) } : i
+                )
 
-            )
+            );
+            let prodObj = {
+                product_id: pid,
+                quantity: qty + 1,
+                status: 0
+            };
+            axios.put("https://edu-groceryapp.herokuapp.com/updateStatus", prodObj)
+                .then((reponse) => {
 
-        );
-        let prodObj = {
-            product_id: pid,
-            quantity: qty + 1,
-            status: 0
-        };
-        axios.put("https://edu-groceryapp.herokuapp.com/updateStatus", prodObj)
-            .then((reponse) => {
-
-            })
+                })
+        }
 
     }
     const decrease = (pid, qty) => {
-        setCart(carts =>
-            carts.map((i) =>
-                // if product matches increase else  return the same object
-                i.product_id === pid ? { ...i, quantity: (i.quantity - 1) } : i
+        if (qty > 1) {
 
-            )
 
-        );
-        let prodObj = {
-            product_id: pid,
-            quantity: qty - 1,
-            status: 0
-        };
-        axios.put("https://edu-groceryapp.herokuapp.com/updateStatus", prodObj)
-            .then((reponse) => {
+            setCart(carts =>
+                carts.map((i) =>
+                    // if product matches increase else  return the same object
+                    i.product_id === pid ? { ...i, quantity: (i.quantity - 1) } : i
 
-            })
+                )
 
+            );
+            let prodObj = {
+                product_id: pid,
+                quantity: qty - 1,
+                status: 0
+            };
+            axios.put("https://edu-groceryapp.herokuapp.com/updateStatus", prodObj)
+                .then((reponse) => {
+
+                })
+        } else {
+            console.log(qty, 'qty')
+            axios.delete(`https://edu-groceryapp.herokuapp.com/deleteOrder/${pid}`)
+                .then((reponse) => {
+                    console.log(reponse, 'deleted');
+                    window.location.reload();
+                    // history.push('/cart')
+                })
+        }
 
     }
-    let ccc = carts.map((item) => {
-        <tr>
-            <td>{item.product_name}</td>
-            <td>{item.quantity}</td>
-            <td>{item.product_price}</td>
-            <td>{item.quantity * item.product_price}</td>
-            <td>UPI</td>
-            <td>{item.status}</td>
-        </tr>
 
+    let totalUnits = 0;
+    let totalCost = 0;
+    let xx = carts.map(i => {
+        totalCost = totalCost + (i.quantity * i.product_price);
+        totalUnits = totalUnits + (i.quantity)
+        sessionStorage.setItem('totalCost', totalCost);
+    sessionStorage.setItem('totalUnits', totalUnits);
     })
 
+    
 
     return (
         <div className="table-responsive">
@@ -81,7 +94,7 @@ function Table() {
                         <th>Quantity</th>
                         <th>Unit Price</th>
                         <th>Sub Total</th>
-                        <th>Status</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -93,16 +106,18 @@ function Table() {
                                 </div>
                             </td>
                             <td>{item.product_name}</td>
-                            <td> <div className="parts2">
-                                <button onClick={(pid, qty) => decrease(item.product_id, item.quantity)}><i class="fa fa-minus" aria-hidden="true"></i></button>
-                                <span className="counter">{item.quantity}</span>
-                                <button onClick={(pid, qty) => increase(item.product_id, item.quantity)}><i class="fa fa-plus" aria-hidden="true"></i></button>
+                            <td>
+                                <div className="parts2">
+                                    <button onClick={(pid, qty) => decrease(item.product_id, item.quantity)}><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                    <span className="counter">{item.quantity}</span>
+                                    <button onClick={(pid, qty) => increase(item.product_id, item.quantity)}><i class="fa fa-plus" aria-hidden="true"></i></button>
 
-                            </div></td>
-                            <td>{item.product_price}</td>
-                            <td>{item.quantity * item.product_price}</td>
+                                </div>
+                            </td>
+                            <td>&#8377; {item.product_price}</td>
+                            <td>&#8377; {item.quantity * item.product_price}</td>
 
-                            <td>{item.status}</td>
+
 
                         </tr>
                         // <li className="cartList" key={item.product_name}>
@@ -132,6 +147,15 @@ function Table() {
                         //     </div>
                         // </li>
                     ))}
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>TOTAL ITEMS: {totalUnits}</td>
+                        <td></td>
+                        <td>
+                       TOTAL:  &#8377; {totalCost}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>

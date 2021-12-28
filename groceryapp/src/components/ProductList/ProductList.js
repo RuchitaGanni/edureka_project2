@@ -40,7 +40,7 @@ class ProductList extends Component {
                     <Link to='/'><span class="label label-default bdcrm">Home</span></Link>
                     <span class=" bdcrm">/</span>
                     <span class="label label-info bdcrm">{this.state.product_category_name}</span>
-                    <Products list={this.state.products} counter={this.state.counter} />
+                    <Products list={this.state.products}  />
                 </div>
             </Fragment >
         )
