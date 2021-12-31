@@ -11,12 +11,12 @@
 }
 .shchead_txt{
     font-weight: bold;
-    font-size:15px;
+    font-size:13px;
     font-family: Verdana;
 }
 .mrp_txt_prod{
     font-weight: bold;
-    font-size:13px;
+    font-size:15px;
    
     font-family: Verdana;
     
@@ -65,6 +65,14 @@ ol {
     text-align:center;
     margin-left:-30px */
 }
-/* .LoaderGIF{
-    margin-top:-15px
-} */
+.caption_div{
+    /* background-color:yellow; */
+    height:40px;
+}
+.mrp_div{
+    /* background-color:blue; */
+    height:20px;
+}
+.cart_div{
+    /* background-color:pink */
+}

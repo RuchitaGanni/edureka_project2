@@ -73,7 +73,7 @@ ul {
 }
 thead>tr{
 
-background-color:grey
+background-color:rgb(65, 218, 60)
 }
 th{
   font-weight: bold;
@@ -86,4 +86,16 @@ td{
   
   font-family: verdana;
   font-size: 15px;
+}
+
+#plusIcon{
+  border-radius: 20px;
+  border-color: #04AA6D;
+  color: green;
+}
+
+#minusIcon{
+  border-radius: 20px;
+  border-color: #f44336;
+  color: red;
 }

@@ -42,7 +42,7 @@ class Header extends Component {
                             <ul className="nav navbar-nav">
                                 <li ><Link exact to="/" className="links">Home</Link></li>
 
-                                <li><Link exact to="/cart" className="links"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span className="cartCount">{this.state.cartCount}</span></Link></li>
+                                <li><Link exact to="/cart" className="links"><i class="fa fa-shopping-basket" aria-hidden="true"></i><span className="cartCount">{this.state.cartCount}</span></Link></li>
                                 <li id="userinfo"><Link exact to="/" className="links"><i class="fa fa-user" aria-hidden="true"></i>  Hello..!! Ruchita</Link></li>
                             </ul>
                             {/* <ul className="nav navbar-nav navbar-right">

@@ -5,7 +5,7 @@ const Products = (props) => {
 
     //get cart database
     const [carts, setCart] = useState([]);
-    // const [disable, setDisable] = useState(false);
+    const [disable, setDisable] = useState('inline');
     const [prods, setprod] = useState([]);
     // const [value, setValue] = useState();
     useEffect(() => {
@@ -15,6 +15,7 @@ const Products = (props) => {
                 if (err) {
                     console.error(err, 'er');
                 }
+                // console.log(res.data, 'data')
                 if (res.data.length >= 1) {
 
                     setCart(carts => (carts = res.data));
@@ -37,16 +38,31 @@ const Products = (props) => {
     const addToCart = (pid, pname, q, price, pimage) => {
 
         let prodObj = '';
-        let updqty;
+        let updqty = 0;
         console.log(mySet1, 'mySet1', typeof mySet1.indexOf(pid))
         let chcek = mySet1.indexOf(pid);
-        if (chcek != -1) {
-            carts.map((item) => {
-                if (item.product_id === pid) {
-                    //setDisable(true)
-                    updqty = item.quantity + 1;
-                }
-            })
+        console.log(chcek, 'chcek')
+        if (chcek >= 0) {
+            if (carts.length > 0) {
+                carts.map((item) => {
+                    if (item.product_id === pid) {
+                        //setDisable(true)
+                        if (item.quantity >= 5) {
+
+                            updqty = item.quantity;
+                            console.log('one', updqty)
+                        } else {
+
+                            updqty = item.quantity + 1;
+                            console.log('two', updqty)
+                        }
+
+                    }
+                })
+            } else {
+                console.log('qqqqqqqq', q)
+                updqty = q + 1;
+            }
 
             // prodObj= {
             //     product_id: pid,
@@ -66,17 +82,20 @@ const Products = (props) => {
                 quantity: updqty,
                 status: 0
             };
-            console.log(q, 'q2')
+
             console.log('put', q, pid, 'prodObj', prodObj)
 
             axios.put("https://edu-groceryapp.herokuapp.com/updateStatus", prodObj)
                 .then((reponse) => {
-                    console.log(reponse, 'put');
+                    console.log(reponse, 'putttttttt');
+
                     // window.location.reload(true);
                 })
 
+
         } else {
-            // console.log('post', q, pid)
+             setDisable('none')
+
             // mySet1.add(item.product_id);
             prodObj = {
                 product_id: pid,
@@ -89,9 +108,11 @@ const Products = (props) => {
             console.log('post', q, pid, 'prodObj', prodObj)
             axios.post(addToCartUrl, prodObj)
                 .then((reponse) => {
-                    console.log(reponse, 'post');
+                    console.log(reponse, 'posttttttttttt');
+                    mySet1.push(pid);
                     // window.location.reload(true);
                 })
+            axios.get("https://edu-groceryapp.herokuapp.com/getOrders").then((res) => setCart(res.data))
 
 
         }
@@ -102,6 +123,12 @@ const Products = (props) => {
 
 
     }
+    // const decrease = () => {
+
+    // }
+    // const increase = () => {
+
+    // }
 
     const renderMeal = () => {
         if (prods.length >= 1) {
@@ -121,11 +148,16 @@ const Products = (props) => {
                     </div>
                     <div class="cart_div">
                         <center>
-                            {/* disabled={disable} */}
-                            <button class="btn btn-primary" id="cart_btn" onClick={(pid, pname, q, price, pimage) => { addToCart(item.product_id, item.product_name, item.qty, item.price, item.product_image) }}>
-                                <span>Add to cart</span>
-                                <span class="glyphicon glyphicon-plus-sign"></span>
+                            {/* disabled={disable}  style={{display: disable}}*/}
+                            <button class="btn btn-primary" id="cart_btn"   onClick={(pid, pname, q, price, pimage) => { addToCart(item.product_id, item.product_name, item.qty, item.price, item.product_image) }}>
+                                <span>Add to </span>
+                                <span class="fa fa-shopping-basket"></span>
                             </button>
+
+                            {/* <button onClick={(pid, qty) => decrease(item.product_id, item.quantity)}><i class="fa fa-minus" aria-hidden="true"></i></button>
+                            <span className="counter">{item.quantity}</span>
+                            <button onClick={(pid, qty) => increase(item.product_id, item.quantity)}><i class="fa fa-plus" aria-hidden="true"></i></button> */}
+
                             {/* <button  className="btn btn-success"><i class="fa fa-minus" aria-hidden="true"></i></button>
                         <span className="counter">{item.qty}</span>
                         <button className="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button> */}
