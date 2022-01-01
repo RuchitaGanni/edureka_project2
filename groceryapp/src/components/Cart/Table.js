@@ -19,6 +19,7 @@ const Table = () => {
 
     let totalUnits = 0;
     let totalCost = 0;
+    let pids=[];
     const increase = (pid, qty) => {
         if (qty < 5) {
             setCart(carts =>
@@ -95,11 +96,12 @@ const Table = () => {
 
 
     let xx = carts.map(i => {
-
+        pids.push(i.product_id)
         totalCost = totalCost + (i.quantity * i.product_price);
         totalUnits = totalUnits + (i.quantity)
         sessionStorage.setItem('totalCost', totalCost);
         sessionStorage.setItem('totalUnits', totalUnits);
+        sessionStorage.setItem('active_pid', pids);
     })
 
 

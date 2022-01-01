@@ -6,38 +6,61 @@ import CartTable from './CartTable'
 
 import axios from 'axios';
 const cartListUrl = "https://edu-groceryapp.herokuapp.com/getOrders";
-const placeOrder="https://edu-groceryapp.herokuapp.com/saveOrder"
+const placeOrder = "https://edu-groceryapp.herokuapp.com/saveOrder"
 class Cart extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            orderid:Math.floor(Math.random()*10000),
+            orderid: Math.floor(Math.random() * 10000),
             items: '',
             totalCost: 0,
             totalUnits: 0
         }
-        
+
         // console.log(sessionStorage.getItem('totalCost'), 'totalCost')
 
         // console.log(sessionStorage.getItem('totalUnits'), 'totalUnits')
     }
 
     placeOrder = () => {
-        console.log(sessionStorage.getItem('totalCost'), 'totalCost4',this.state.cartss)
+        const pids = sessionStorage.getItem('active_pid').split(',');
+        // const orderID=this.state.orderid;
+        console.log(pids, 'pids', typeof pids)
+        console.log(sessionStorage.getItem('active_pid'), 'active_pid');
+        console.log(sessionStorage.getItem('totalCost'), 'totalCost4', this.state.cartss)
 
         console.log(sessionStorage.getItem('totalUnits'), 'totalUnits');
-        console.log(this.state,'this.state')
+        console.log(this.state, 'this.state')
 
-        fetch(placeOrder,{
-            method:'POST',
-            headers:{
-                'accept':'application/json',
-                'content-type':'application/json'
+        fetch(placeOrder, {
+            method: 'POST',
+            headers: {
+                'accept': 'application/json',
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(this.state)
+            body: JSON.stringify(this.state)
         })
-        //.then(this.props.history.push('/viewBooking'))
-        .then(console.log('going for payment'))
+            //.then(this.props.history.push('/viewBooking'))
+            .then(
+                // async function x() {
+                pids.map((i) => {
+
+                    axios.put("https://edu-groceryapp.herokuapp.com/updateItemStatus", {
+                        "product_id": i,
+                        "order_id": this.state.orderid
+                    })
+                        .then((reponse) => {
+
+                            console.log('going for payment', i, 'res', reponse)
+                        })
+                })
+
+
+                // sessionStorage.removeItem('totalUnits')
+
+                // console.log(sessionStorage.removeItem('totalUnits'))
+            )
+        // console.log('going for payment'))
     }
 
     render() {
@@ -53,21 +76,25 @@ class Cart extends Component {
 
                     {/* <CartList carttems={this.state.cartss} /> */}
                     {/* <CartList  /> */}
-                    
+
                     <CartTable />
                     <form action="http://zompay.herokuapp.com/paynow" method="POST">
 
-                   
-                    <div className="checkOutDiv">
-                        {/* <center> */}
-                            <button id="checkOut" className="btn btn-primary pull-right" onClick={this.placeOrder} type="submit">
+
+                        <div className="checkOutDiv">
+                            {/* <center>  type="submit"*/}
+                            <button id="checkOut" className="btn btn-primary pull-right" onClick={this.placeOrder} type="submit" >
                                 <span class="btn_txt">Proceed to check Out</span>
                             </button>
-                        {/* </center> */}
-                    </div>
-                    <input type="hidden" name="amount" value={this.state.totalCost}/>
-                            <input type="hidden" name="id" value={this.state.orderid}/>
-                            <input type="hidden" name="hotel_name" value="grocerypayments"/>
+                            {/* </center> */}
+                        </div>
+                        <input type="hidden" name="amount" value={this.state.totalCost} />
+                        <input type="hidden" name="id" value={this.state.orderid} />
+                        <input type="hidden" name="hotel_name" value="grocerypayments" />
+                        <input type="hidden" name="name" value="grocerypayments" />
+                        <input type="hidden" name="phone" value="grocerypayments" />
+                        <input type="hidden" name="email" value="grocerypayments" />
+                        <input type="hidden" name="address" value="grocerypayments" />
                     </form>
                     {/* <div className="checkOutDiv">
 

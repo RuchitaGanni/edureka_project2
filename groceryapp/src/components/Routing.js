@@ -4,7 +4,7 @@ import Header from './Header/Header';
 import Cart from './Cart/Cart'
 import MainBody from './MainBody/MainBody';
 import ProductList from './ProductList/ProductList'
-
+import Booking from './Booking/Booking'
 const Routing = () => {
     return(
         <BrowserRouter>
@@ -12,7 +12,8 @@ const Routing = () => {
                 <Route exact path="/" component={MainBody}/>
                 <Route exact path="/cart" component={Cart}/>
                 <Route exact path="/product" component={ProductList}/>
-                <Route exact path='saveOrder'/>
+                <Route exact path='/saveOrder'/>
+                <Route path='/viewBooking' component={Booking} />
                 {/* <Route exact path="/post" component={Post}/>
                 <Route path="/post/:topic" component={PostDetails}/>
                 <Route path="/profile" component={Profile}/> */}
