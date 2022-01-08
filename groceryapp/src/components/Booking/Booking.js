@@ -1,11 +1,21 @@
 import React, { Component, Fragment } from 'react';
-import './Booking.css'
+import axios from 'axios'
+import './Booking.css';
+import Header from '../Header/Header';
+import BookingTable from './BookingTable'
 const orderStatusUpdate = "https://edu-groceryapp.herokuapp.com/updateOrder/"
+const getFinalOrdersurl="https://edu-groceryapp.herokuapp.com/finalOrder"
 class Booking extends Component {
-
+    constructor (){
+        super()
+        this.state={
+            orders:''
+        }
+    }
     render() {
         return (
             <Fragment>
+                 <Header/>
                 <div className="container">
                     <table className="table table-hover">
                         <thead className="thead-dark">
@@ -13,13 +23,13 @@ class Booking extends Component {
                                 <th></th>
                                 <th>Date Delivered</th>
                                 <th>Order Amount</th>
-                                <th>Items</th>
+                                <th>Payment Status</th>
                                 <th>Payment Mode</th>
 
                             </tr>
                         </thead>
-                        <tbody>
-
+                        <tbody className="tbodyFinal">
+                        <BookingTable  finalOrder={this.state.orders}/>
                         </tbody>
                     </table>
                 </div>
@@ -57,7 +67,7 @@ class Booking extends Component {
                     })
             }
         }
-        // axios.get(url).then((res) => {this.setState({orders:res.data})})
+         axios.get(getFinalOrdersurl).then((res) => {this.setState({orders:res.data})})
     }
 }
 export default Booking;

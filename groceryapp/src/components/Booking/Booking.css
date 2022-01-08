@@ -1,3 +1,8 @@
 .tr{
     background-color:#555;
 }
+.fa-money{
+    color:darkgreen;
+    font-size:20px !important;
+    text-align:center !important;
+}

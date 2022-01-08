@@ -2,11 +2,12 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom'
 import './Cart.css';
 import CartList from './CartList';
+import Header from '../Header/Header';
 import CartTable from './CartTable'
 
 import axios from 'axios';
 const cartListUrl = "https://edu-groceryapp.herokuapp.com/getOrders";
-const placeOrder = "https://edu-groceryapp.herokuapp.com/saveOrder"
+const placeOrderUrl = "https://edu-groceryapp.herokuapp.com/saveOrder"
 class Cart extends Component {
     constructor(props) {
         super(props)
@@ -32,7 +33,7 @@ class Cart extends Component {
         console.log(sessionStorage.getItem('totalUnits'), 'totalUnits');
         console.log(this.state, 'this.state')
 
-        fetch(placeOrder, {
+        fetch(placeOrderUrl, {
             method: 'POST',
             headers: {
                 'accept': 'application/json',
@@ -41,7 +42,7 @@ class Cart extends Component {
             body: JSON.stringify(this.state)
         })
             //.then(this.props.history.push('/viewBooking'))
-            .then(
+            .then((res) => {
                 // async function x() {
                 pids.map((i) => {
 
@@ -57,15 +58,16 @@ class Cart extends Component {
 
 
                 // sessionStorage.removeItem('totalUnits')
-
+console.log(res,'res')
                 // console.log(sessionStorage.removeItem('totalUnits'))
-            )
+            })
         // console.log('going for payment'))
     }
 
     render() {
         return (
             <Fragment>
+                <Header />
                 <div className="container" id="main-body-container">
                     {/* <center>
                         <button id="checkOut" className="btn btn-primary border border-warning">
@@ -78,8 +80,9 @@ class Cart extends Component {
                     {/* <CartList  /> */}
 
                     <CartTable />
-                    <form action="http://zompay.herokuapp.com/paynow" method="POST">
-
+                    {/* <form action="http://zompay.herokuapp.com/paynow" method="POST"> */}
+                    {/*   http://localhost:4100/paynow*/}
+                    <form action="https://edu-payment.herokuapp.com/paynow" method="POST">
 
                         <div className="checkOutDiv">
                             {/* <center>  type="submit"*/}

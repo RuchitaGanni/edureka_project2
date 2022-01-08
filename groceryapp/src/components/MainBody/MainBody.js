@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import './MainBody.css';
 import Category from '../category/Category';
+import Header from '../Header/Header'
 
 import axios from 'axios';
 
@@ -18,6 +19,7 @@ class MainBody extends Component {
     render() {
         return (
             <Fragment >
+                <Header/>
                 <div className="container" id="main-body-container">
                     {/* <div className="row" >
                         <div className="col-sm-3 col-md-5" id="serachBox"> */}

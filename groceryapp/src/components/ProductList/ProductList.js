@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom';
+import Header from '../Header/Header';
 import './ProductList.css';
 import Products from './Products'
 import axios from 'axios';
@@ -31,6 +32,7 @@ class ProductList extends Component {
 
         return (
             <Fragment>
+                <Header/>
                 <div className="container" id="main-body-container">
                     {/* <ol class="breadcrumb">
                         <li></li>
